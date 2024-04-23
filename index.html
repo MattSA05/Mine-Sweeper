@@ -12,27 +12,26 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100vh;
     background-color: #f0f0f0;
   }
   .title {
-    font-size: 36px;
+    font-size: 24px; /* Decreased font size for better mobile readability */
     font-weight: bold;
-    margin-bottom: 20px;
+    margin-bottom: 10px; /* Adjusted margin for better spacing */
     font-family: 'Arial Black', sans-serif;
     text-transform: uppercase;
     color: #333;
   }
   .reset-btn {
-    padding: 10px 20px;
+    padding: 8px 16px; /* Decreased padding for better button size on mobile */
     background-color: #4CAF50;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 18px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    font-size: 14px; /* Decreased font size for better button size on mobile */
+    margin-top: 10px; /* Adjusted margin for better spacing */
+    margin-bottom: 10px; /* Adjusted margin for better spacing */
   }
   .reset-btn:hover {
     background-color: #45a049;
@@ -41,17 +40,17 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 10px; /* Adjusted margin for better spacing */
   }
   .grid {
     display: grid;
-    grid-template-columns: repeat(15, 30px);
-    grid-template-rows: repeat(15, 30px);
+    grid-template-columns: repeat(8, 25px); /* Adjusted grid for better mobile fit */
+    grid-template-rows: repeat(8, 25px); /* Adjusted grid for better mobile fit */
     gap: 1px;
   }
   .cell {
-    width: 30px;
-    height: 30px;
+    width: 25px; /* Decreased cell size for better mobile fit */
+    height: 25px; /* Decreased cell size for better mobile fit */
     background-color: #ccc;
     display: flex;
     justify-content: center;
@@ -81,10 +80,10 @@
     max-height: 100%;
   }
   .timer {
-    font-size: 24px;
+    font-size: 18px; /* Decreased font size for better mobile fit */
     font-weight: bold;
     margin-bottom: 0px;
-    margin-left: -325px;
+    margin-left: -150px; /* Adjusted margin for better mobile fit */
   }
   .red {
     color: red;
@@ -106,10 +105,10 @@ const grid = document.getElementById('grid');
 const overlay = document.getElementById('overlay');
 const resetButton = document.querySelector('.reset-btn');
 const timerDisplay = document.getElementById('timer');
-const width = 15; // Adjust grid width
-const height = 15; // Adjust grid height
-const mines = 35; // Adjust number of mines
-const maxFlags = 35; // Maximum number of flags allowed
+const width = 8; // Adjusted grid width for better mobile fit
+const height = 8; // Adjusted grid height for better mobile fit
+const mines = 10; // Adjusted number of mines for better mobile fit
+const maxFlags = 10; // Adjusted maximum number of flags allowed for better mobile fit
 const timeLimit = 5 * 60; // 5 minutes time limit
 
 let cells = [];
@@ -299,7 +298,7 @@ function revealAllMines() {
 // Update timer display
 function updateTimerDisplay() {
   if (minutes === 0 && seconds <= 10) {
-    timerDisplay.innerHTML = `Timer: <span class="red">${formatTime(minutes)}:${formatTime(seconds)}</span>`;
+    timerDisplay.innerHTML = `Timer: <span class=red>${formatTime(minutes)}:${formatTime(seconds)}</span>`;
   } else {
     timerDisplay.innerHTML = `Timer: ${formatTime(minutes)}:${formatTime(seconds)}`;
   }
